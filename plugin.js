@@ -89,6 +89,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
             else if (this.externals.some(tag => comment.hasTag(tag))) {
                 InternalExternalPlugin_1.markSignatureAndMethod(reflection, true);
             }
+            else {
+                InternalExternalPlugin_1.markSignatureAndMethod(reflection, false);
+            }
             this.internals.forEach(tag => CommentPlugin_1.CommentPlugin.removeTags(comment, tag));
             this.externals.forEach(tag => CommentPlugin_1.CommentPlugin.removeTags(comment, tag));
         }
@@ -109,6 +112,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
             }
             else if (this.externals.some(tag => comment.hasTag(tag))) {
                 setExternal(reflection.flags, true);
+            }
+            else {
+                setExternal(reflection.flags, false);
             }
             this.internals.forEach(tag => CommentPlugin_1.CommentPlugin.removeTags(comment, tag));
             this.externals.forEach(tag => CommentPlugin_1.CommentPlugin.removeTags(comment, tag));
@@ -140,6 +146,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
             }
             else if (externalMatch) {
                 context.isExternal = true;
+            }
+            else {
+                context.isExternal = false;
             }
         }
     };
