@@ -1,6 +1,6 @@
 {
   "name": "typedoc-plugin-internal-external",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Force a File or Reflection (symbol) to be @internal or @external",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/christopherthielen/typedoc-plugin-internal-external"
+    "url": "https://github.com/cocos-creator/typedoc-plugin-internal-external"
   },
   "author": "Chris Thielen",
   "license": "MIT",
