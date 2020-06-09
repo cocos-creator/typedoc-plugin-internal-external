@@ -85,6 +85,8 @@ export class InternalExternalPlugin extends ConverterComponent {
       InternalExternalPlugin.markSignatureAndMethod(reflection, false);
     } else if (this.externals.some(tag => comment.hasTag(tag))) {
       InternalExternalPlugin.markSignatureAndMethod(reflection, true);
+    } else {
+      InternalExternalPlugin.markSignatureAndMethod(reflection, false);
     }
 
     this.internals.forEach(tag => CommentPlugin.removeTags(comment, tag));
@@ -108,6 +110,8 @@ export class InternalExternalPlugin extends ConverterComponent {
       setExternal(reflection.flags, false);
     } else if (this.externals.some(tag => comment.hasTag(tag))) {
       setExternal(reflection.flags, true);
+    } else {
+      setExternal(reflection.flags, false);
     }
 
     this.internals.forEach(tag => CommentPlugin.removeTags(comment, tag));
@@ -141,6 +145,8 @@ export class InternalExternalPlugin extends ConverterComponent {
       context.isExternal = false;
     } else if (externalMatch) {
       context.isExternal = true;
+    } else {
+      context.isExternal = false;
     }
   }
 }
